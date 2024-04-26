@@ -1276,6 +1276,7 @@ void __init setup_arch(char **cmdline_p)
 	 * Systems w/o ACPI and mptables might not have it mapped the local
 	 * APIC yet, but prefill_possible_map() might need to access it.
 	 */
+	set_fixmap_nocache(FIX_APIC_BASE, 0xfee00000);
 	init_apic_mappings();
 
 	prefill_possible_map();
